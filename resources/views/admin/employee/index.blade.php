@@ -52,13 +52,13 @@
                                               </button>
                                               {!! Form::close() !!}
                                           </td>
-                                          <td class="text-left">{!! link_to(URL::route("admin.employee.edit", $person->id_People), $person->First_Name . " " . $person->Surname) !!}</td>
+                                          <td class="text-left" nowrap="">{!! link_to(URL::route("admin.employee.edit", $person->id_People), $person->First_Name . " " . $person->Surname) !!}</td>
                                           @if ($person && $person->Position)
                                             <td class="text-left">{!! $person->Position !!}</td>
                                           @else
                                             <td class="text-left"></td>
                                           @endif
-                                          <td class="text-left">{!! $person->Company_Name !!}</td>
+                                          <td class="text-left" nowrap="">{!! $person->Company_Name !!}</td>
                                       </tr>
                                   @endforeach
                               @else
