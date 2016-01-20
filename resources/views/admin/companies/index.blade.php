@@ -12,7 +12,10 @@
             {
                 $("#table-item-list").dataTable({
                     "iDisplayLength": 50,
-                    "aLengthMenu": [25,50,100],
+                    "aLengthMenu": [
+                            [50, 100, 200, 500, -1],
+                            [50, 100, 200, 500, "All"]
+                        ],
                     "sPaginationType": "full_numbers",
                     "aoColumns": [
                         { "bSortable": false },
