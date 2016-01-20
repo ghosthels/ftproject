@@ -14,6 +14,7 @@ use \App\Models\CareerHistory;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Support\Facades\DB;
 use Mockery\Exception;
 use Redirect;
 
@@ -36,8 +37,20 @@ class EmployeeController extends Controller
     {
         Session::forget('UniversityHistory');
         Session::forget('CareerHistory');
-        $this->convertScript();
-        $people = People::whereNull("Deleted")->get()->sortBy("First_Name");
+        //$this->convertScript();
+        $people = DB::table("Employee")
+                    ->select("People.id_People", "People.First_Name", "People.Middle_Name", "People.Surname", "Career_History.Company_Name",
+                        DB::raw("GROUP_CONCAT(Employee_Type.Type_Name ORDER BY Type_Name DESC SEPARATOR ',') as Position"))
+                    ->leftJoin("People", "Employee.id_People", "=", "People.id_People")
+                    ->leftJoin("Employee_Employee_Types", "Employee.id_Employee", "=", "Employee_Employee_Types.id_Employee")
+                    ->leftJoin("Employee_Type", "Employee_Employee_Types.id_Employee_Type", "=", "Employee_Type.id_Employee_Type")
+                    ->leftJoin("Career_History", "People.id_People", "=", "Career_History.id_People")
+                    ->whereNull("People.Deleted")
+                    ->where("Career_History.Current_Position_Status", "=", 1)
+                    ->groupBy("Employee.id_Employee")
+                    ->get();
+//        dd($people);
+//        $people = People::whereNull("Deleted")->where("id_People", "<", 2500)->get()->sortBy("First_Name");
         return view("admin.employee.index", compact("people"));
     }
 

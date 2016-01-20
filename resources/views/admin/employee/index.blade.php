@@ -12,6 +12,7 @@
                             "aoColumns": [
                                 { "bSortable": false },
                                 null,
+                                null,
                                 null
                             ]
                         });
@@ -33,10 +34,11 @@
                                   <th><i class="center-block icon-tasks"></i></th>
                                   <th>First Name</th>
                                   <th>Employee Type</th>
+                                  <th>Company</th>
                               </tr>
                           </thead>
                           <tbody>
-                              @if ($people->count() > 0)
+                              @if (count($people) > 0)
                                   @foreach ($people as $id => $person)
                                       <tr>
                                           <td class="text-center" width="1%">
@@ -51,16 +53,17 @@
                                               {!! Form::close() !!}
                                           </td>
                                           <td class="text-left">{!! link_to(URL::route("admin.employee.edit", $person->id_People), $person->First_Name . " " . $person->Surname) !!}</td>
-                                          {{--@if ($person->employee()->first()->employeeType()->first())--}}
-                                            {{--<td class="text-left">{!! $person->employee()->first()->employeeType()->first()->Type_Name !!}</td>--}}
-                                          {{--@else--}}
+                                          @if ($person && $person->Position)
+                                            <td class="text-left">{!! $person->Position !!}</td>
+                                          @else
                                             <td class="text-left"></td>
-                                          {{--@endif--}}
+                                          @endif
+                                          <td class="text-left">{!! $person->Company_Name !!}</td>
                                       </tr>
                                   @endforeach
                               @else
                                   <tr>
-                                      <td colspan="3" class="text-center">No records found</td>
+                                      <td colspan="4" class="text-center">No records found</td>
                                   </tr>
                               @endif
                           </tbody>

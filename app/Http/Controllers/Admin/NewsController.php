@@ -91,6 +91,7 @@ class NewsController extends Controller
     {
         $newsFields = $this->doValidation($request, News::getValidatorRules());
         $newsFields["Story_Date"] = Carbon::parse($newsFields["Story_Date"]);
+        $newsFields['Date_Created'] = Carbon::now();
         $newsModel = News::create($newsFields);
         $this->saveObjectRelation($request, $newsModel);
         return redirect(route('admin.news.index'))->with('flash', 'The News was created');
@@ -164,6 +165,7 @@ class NewsController extends Controller
         $newsModel = News::findOrNew($id);
         $newsFields = $this->doValidation($request, News::getValidatorRules());
         $newsFields["Story_Date"] = Carbon::parse($newsFields["Story_Date"]);
+        $newsFields['Date_Modified'] = Carbon::now();
         $newsModel->fill($newsFields)->save();
         $this->saveObjectRelation($request, $newsModel);
         return redirect(route('admin.news.index'))->with('flash', 'The News was updated');
