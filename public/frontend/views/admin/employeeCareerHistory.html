@@ -1,0 +1,67 @@
+<div>
+    <div class="modal-header clearfix">
+        <h3 class="modal-title"><% title %></h3>
+        <div class="form-row">
+    </div>
+    <div class="modal-body">
+        <div class="block block-transparent">
+            <div class="content">
+
+                <div class="form-row"><label for="Career_History">Career History:</label></div>
+                <div class="form-row">
+                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                        <label for="Company_Name">Company:</label>
+                    </div>
+                    <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+                        <input class="form-control" name="Company_Name" type="text" id="Company_Name">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                        <label for="Position_Name">Position:</label>
+                    </div>
+                    <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+                        <input class="form-control" name="Position_Name" type="text" id="Position_Name">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                        <label for="time_period">Time Period:</label>
+                    </div>
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                        <div class="input-group date" id="starYearJob">
+                            <input id="starYearJ" class="form-control" name="Start_Month" type="text">
+                                <span class="input-group-addon">
+                                    <span class="icon-calendar-empty"></span>
+                                </span>
+                        </div>
+                    </div>
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                        <div class="input-group date" id="finishYearJob">
+                            <input id="finishYearJ" class="form-control" name="Finish_Month" type="text">
+                                <span class="input-group-addon">
+                                    <span class="icon-calendar-empty"></span>
+                                </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                        <div class="checker"><span><input name="Current_Position_Status" type="checkbox" value="1"></span></div> <label for="time_period">Currently work here</label>
+                    </div>
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                        <div class="pull-right">
+                            <input class="btn btn-warning btn-sm" name="add_career" type="submit" value="Add">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <div>
+            <button type="button" class="btn btn-danger" ng-click="cancel()" value="Cancel">Cancel</button>
+            <button type="button" class="btn btn-success" ng-click="select()" value="Select">Select</button>
+        </div>
+    </div>
+</div>

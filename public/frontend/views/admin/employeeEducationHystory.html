@@ -1,0 +1,63 @@
+<div>
+    <div class="modal-header clearfix">
+        <h3 class="modal-title"><% title %></h3>
+        <div class="form-row">
+        </div>
+        <div class="modal-body">
+            <div class="block block-transparent">
+                <div class="content">
+                    <div class="form-row"><label for="Education_History">Education History:</label></div>
+                    <div class="form-row">
+                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                            <label for="University_Name">University:</label>
+                        </div>
+                        <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+                            <input class="form-control" name="University_Name" type="text" id="University_Name">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                            <label for="Degree_title">Degree:</label>
+                        </div>
+                        <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+                            <input class="form-control" name="Degree_title" type="text" id="Degree_title">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                            <label for="attends_date">Dates Attends:</label>
+                        </div>
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                            <div class="input-group date" id="starYearAttends">
+                                <input id="starYear" class="form-control" name="Start_year" type="text">
+                                <span class="input-group-addon">
+                                    <span class="icon-calendar-empty"></span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                            <div class="input-group date" id="finishYearAttends">
+                                <input id="finishYear" class="form-control" name="Finish_year" type="text">
+                                <span class="input-group-addon">
+                                    <span class="icon-calendar-empty"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="pull-right">
+                                <input class="btn btn-warning btn-sm pull-right" name="add_education" type="submit" value="Add">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div>
+                <button type="button" class="btn btn-danger" ng-click="cancel()" value="Cancel">Cancel</button>
+                <button type="button" class="btn btn-success" ng-click="select()" value="Select">Select</button>
+            </div>
+        </div>
+    </div>

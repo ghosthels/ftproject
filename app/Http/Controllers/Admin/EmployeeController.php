@@ -49,8 +49,6 @@ class EmployeeController extends Controller
                     ->where("Career_History.Current_Position_Status", "=", 1)
                     ->groupBy("Employee.id_Employee")
                     ->get();
-//        dd($people);
-//        $people = People::whereNull("Deleted")->where("id_People", "<", 2500)->get()->sortBy("First_Name");
         return view("admin.employee.index", compact("people"));
     }
 
@@ -80,8 +78,6 @@ class EmployeeController extends Controller
             }
         }
         else {
-
-
             if (!Session::has('UniversityHistory')) {
                 Session::set('UniversityHistory', $people->universityHistory()->get());
             }

@@ -14,7 +14,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li class="{!!(Request::is('admin') ? 'active' : '')!!}">
-                        <a href="{{ URL::to('/admin/') }}"><i class="fa fa-1x fa-dashboard"></i> Dashboard</a>
+                        <a href="{{ URL::to('/admin/') }}"><i class="icon-dashboard"></i> Dashboard</a>
                     </li>
                     <li class="{!!(Request::is('admin/verticals') ? 'active' : '')!!}">
                         <a href="{{ URL::to('/admin/') }}">Verticals</a>

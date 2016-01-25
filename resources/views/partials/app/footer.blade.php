@@ -1,5 +1,5 @@
 <div class="footer">
-    <div class="navbar navbar-fixed-bottom navbar-default navbar-right">
+    <div class="navbar navbar-default center">
         <div class="container">
             <div class="navbar-text">
                 <div id="copyright">Copyright &copy; 2015 <a href="http://fintechmonitor.com/"> Fintechmonitor.com</a> |
