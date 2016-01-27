@@ -3,6 +3,19 @@
 @section('content')
     <section class="content">
         <script type="text/javascript">
+            jQuery.fn.dataTableExt.oSort['date-euro-asc'] = function(a, b) {
+                var x = new Date(a).getTime();
+                var y = new Date(b).getTime();
+                var z = ((x < y) ? -1 : ((x > y) ? 1 : 0));
+                return z;
+            };
+
+            jQuery.fn.dataTableExt.oSort['date-euro-desc'] = function(a, b) {
+                var x = new Date(a).getTime();
+                var y = new Date(b).getTime();
+                var z = ((x < y) ? 1 : ((x > y) ? -1 : 0));
+                return z;
+            };
             $(document).ready(function()
                     {
                         $("#table-item-list").dataTable({
@@ -14,7 +27,7 @@
                             "sPaginationType": "full_numbers",
                             "aoColumns": [
                                 { "bSortable": false },
-                                null,
+                                {"sType": "date-euro"},
                                 null,
                                 null,
                                 null

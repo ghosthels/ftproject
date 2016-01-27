@@ -151,14 +151,16 @@
                 </div>
                 <div id="collapseTMarket" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTMarket">
                     <div class="panel-body">
-                        @foreach($TargetMarket as $TargetMarketItem)
-                            <div class="input-group">
-                                <span class="input-group-addon">
-                                    {!! Form::checkbox($TargetMarketItem->name, null, in_array($TargetMarketItem->description, $TargetMarketSelection)) !!}
-                                </span>
-                                <div class="form-control-static ">{{ $TargetMarketItem->description }}</div>
-                            </div><!-- /input-group -->
-                        @endforeach
+                        <ul>
+                            @foreach($TargetMarket as $TargetMarketItem)
+                                <li>
+                                    <label>
+                                        {!! Form::checkbox($TargetMarketItem->name, null, in_array($TargetMarketItem->description, $TargetMarketSelection)) !!}
+                                        {{ $TargetMarketItem->description }}
+                                    </label>
+                                </li>
+                            @endforeach
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -177,14 +179,16 @@
                 </div>
                 <div id="collapseTEndUser" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTEndUser">
                     <div class="panel-body">
-                        @foreach($TargetEndUser as $TargetItem)
-                            <div class="input-group">
-                                <span class="input-group-addon">
-                                    {!! Form::checkbox($TargetItem->name, null, in_array($TargetItem->description, $TargetEndUserSelection)) !!}
-                                </span>
-                                <div class="form-control-static ">{{ $TargetItem->description }}</div>
-                            </div><!-- /input-group -->
-                        @endforeach
+                        <ul>
+                            @foreach($TargetEndUser as $TargetItem)
+                                <li>
+                                    <label>
+                                        {!! Form::checkbox($TargetItem->name, null, in_array($TargetItem->description, $TargetEndUserSelection)) !!}
+                                        {{ $TargetItem->description }}
+                                    </label>
+                                </li>
+                            @endforeach
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -203,14 +207,16 @@
                 </div>
                 <div id="collapseAssetClass" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingAssetClass">
                     <div class="panel-body">
-                        @foreach($AssetClass as $AssetClassItem)
-                            <div class="input-group">
-                                <span class="input-group-addon">
-                                    {!! Form::checkbox($AssetClassItem->name, null, in_array($AssetClassItem->description, $ClassAssetsSelection)) !!}
-                                </span>
-                                <div class="form-control-static ">{{ $AssetClassItem->description }}</div>
-                            </div><!-- /input-group -->
-                        @endforeach
+                        <ul>
+                            @foreach($AssetClass as $AssetClassItem)
+                                <li>
+                                    <label>
+                                        {!! Form::checkbox($AssetClassItem->name, null, in_array($AssetClassItem->description, $ClassAssetsSelection)) !!}
+                                        {{ $AssetClassItem->description }}
+                                    </label>
+                                </li>
+                            @endforeach
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -229,14 +235,16 @@
                 </div>
                 <div id="collapseTerritory" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTerritory">
                     <div class="panel-body">
-                        @foreach($AvailabilityTerritory as $Territory)
-                            <div class="input-group">
-                                <span class="input-group-addon">
-                                    {!! Form::checkbox($Territory->name, null, in_array($Territory->description, $TerritorySelection)) !!}
-                                </span>
-                                <div class="form-control-static ">{{ $Territory->description }}</div>
-                            </div><!-- /input-group -->
-                        @endforeach
+                        <ul>
+                            @foreach($AvailabilityTerritory as $Territory)
+                                <li>
+                                    <label>
+                                        {!! Form::checkbox($Territory->name, null, in_array($Territory->description, $TerritorySelection)) !!}
+                                        {{ $Territory->description }}
+                                    </label>
+                                </li>
+                            @endforeach
+                        </ul>
                     </div>
                 </div>
             </div>
